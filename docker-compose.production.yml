@@ -27,7 +27,7 @@ services:
     volumes:
       - static_vol:/static
   gateway:
-    image: sanila27041986/kittygram_nginx
+    image: sanila27041986/kittygram_gateway
     env_file: .env
     ports:
       - 9000:80
