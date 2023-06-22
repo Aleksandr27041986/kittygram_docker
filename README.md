@@ -15,10 +15,10 @@ Kittygram — социальная сеть для обмена фотограф
 #### Стек:
 Python, JavaScript, Django, Django Rest Framework, PostgreSQL, Docker
 ***
-###  
+
 ### Как запустить проект:
 
-1. Клонировать репозиторий и перейти в него в командной строке:
+#### 1. Клонировать репозиторий и перейти в него в командной строке:
 
 ```bash
 git clone git@github.com:Aleksandr27041986/kittygram_final.git
@@ -28,11 +28,57 @@ git clone git@github.com:Aleksandr27041986/kittygram_final.git
 cd kittygram/backend/
 ```
 
-2. Запуск проекта локально:
- - запустить локально бэкенд(см. [README](./backend/README.md))
- - запустить локально фронтэнд(см. [README](./frontend/README.md))
+#### 2. Запуск проекта локально:
+ ##### - запустить локально бэкенд:
 
-3. Запуск проекта с использованием [Docker compose](https://hub.docker.com/):
+Перейти в бэкенд командной строкой:
+```bash
+cd backend
+```
+Cоздать и активировать виртуальное окружение:
+```bash
+python3 -m venv env
+```
+* Если у вас Linux/macOS
+    ```bash
+    source env/bin/activate
+    ```
+* Если у вас windows
+   ```bash
+    source env/scripts/activate
+    ```
+```bash
+python3 -m pip install --upgrade pip
+```
+Установить зависимости из файла requirements.txt:
+```bash
+pip install -r requirements.txt
+```
+Выполнить миграции:
+```bash
+python3 manage.py migrate
+```
+Запустить проект:
+```bash
+python3 manage.py runserver
+```
+
+##### - запустить локально фронтэнд:
+Перейти во фронтенд в командной строке:
+```bash
+cd ../frontend
+```
+Установить зависимости:
+```bash
+npm i
+```
+Запустить проект:
+
+```bash
+npm run start
+```
+
+#### 3. Запуск проекта с использованием [Docker compose](https://hub.docker.com/):
  - установить Docker Compose:
 ```bash
 sudo apt update
